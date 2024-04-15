@@ -1,0 +1,6 @@
+rootProject.name = 'common-bulk-service'
+include 'bulk-service'
+include 'bulk-service-repository'
+include 'bulk-service-rpc-proto'
+include 'bulk-service-core'
+
