@@ -5,6 +5,6 @@ import io.temporal.activity.ActivityInterface;
 
 
 @ActivityInterface
-public interface ProcessorActivity<T>  extends Processor<T> {
+public interface ProcessorActivity<T>   {
 
 }

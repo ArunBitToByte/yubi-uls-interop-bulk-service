@@ -16,15 +16,15 @@ import org.springframework.stereotype.Component;
 public class JobFactory {
 
 
-    private  final DefaultJobImpl defaultJobImpl;
-    public JobWorkflow createJob(String type) {
-       if(StringUtils.isEmpty(type)){
-           return buildDefaultJob();
-        }
-        return null;
-    }
-
-    private JobWorkflow buildDefaultJob() {
-        return defaultJobImpl;
-    }
+//    private  final DefaultJobImpl defaultJobImpl;
+//    public JobWorkflow createJob(String type) {
+//       if(StringUtils.isEmpty(type)){
+//           return buildDefaultJob();
+//        }
+//        return null;
+//    }
+//
+//    private JobWorkflow buildDefaultJob() {
+//        return defaultJobImpl;
+//    }
 }

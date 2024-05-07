@@ -1,6 +1,7 @@
-package com.yubi.uls.interop.bulk.entity;
+package com.yubi.uls.bulk.entity;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
 import lombok.*;
 import org.hibernate.annotations.*;
 
@@ -11,6 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Job")
+@TypeDefs({
+        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+})
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

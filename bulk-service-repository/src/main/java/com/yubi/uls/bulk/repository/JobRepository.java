@@ -1,6 +1,6 @@
-package com.yubi.uls.interop.bulk.repository;
+package com.yubi.uls.bulk.repository;
 
-import com.yubi.uls.interop.bulk.entity.JobEntity;
+import com.yubi.uls.bulk.entity.JobEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

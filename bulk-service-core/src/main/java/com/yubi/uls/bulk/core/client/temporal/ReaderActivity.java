@@ -4,6 +4,8 @@ import com.yubi.uls.bulk.core.client.Reader;
 import io.temporal.activity.ActivityInterface;
 
 @ActivityInterface
-public interface ReaderActivity<T> extends Reader<T> {
+public interface ReaderActivity<T> {
+
+    public void read(Object chunk);
 
 }

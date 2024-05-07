@@ -16,7 +16,10 @@ public interface JobWorkflow extends Job {
  void process(JobConfiguration jobConfiguration);
 
  @SignalMethod
- void reportCompletion(JobConfiguration partition);
+ void reportCompletion(Partition partition);
+
+ @SignalMethod
+ void reportPartitionProgress(int count);
 
  @QueryMethod
  BatchProgress getProgress();

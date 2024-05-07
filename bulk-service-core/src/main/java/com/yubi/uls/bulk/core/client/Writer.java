@@ -1,5 +1,7 @@
 package com.yubi.uls.bulk.core.client;
 
-public interface Writer<T> {
-    public void write(T item);
+import java.util.List;
+
+public interface Writer<I,P> {
+    public void write(List<I> sourceItem, List<P> processedItem);
 }

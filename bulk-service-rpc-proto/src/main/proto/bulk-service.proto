@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-package com.yubi.uls.interop.bulkservice.proto;
+package com.yubi.uls.bulk.proto;
 
 import "bulk-request.proto";
 

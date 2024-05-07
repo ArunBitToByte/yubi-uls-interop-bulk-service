@@ -1,4 +1,4 @@
-package com.yubi.uls.interop.bulk.entity;
+package com.yubi.uls.bulk.entity;
 
 
 import org.springframework.stereotype.Component;

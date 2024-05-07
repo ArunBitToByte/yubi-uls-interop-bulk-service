@@ -1,6 +1,8 @@
 package com.yubi.uls.bulk.core.client;
 
 
-public interface Processor<T> {
-    public void process(T item);
+import java.util.List;
+
+public interface Processor<T,R> {
+    public List<R> process(List<T> item);
 }

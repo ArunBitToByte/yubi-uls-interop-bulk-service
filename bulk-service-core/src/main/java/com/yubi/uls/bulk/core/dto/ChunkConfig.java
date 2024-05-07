@@ -6,16 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Objects;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class Partition extends BatchConfig{
-
+public class ChunkConfig extends BatchConfig{
     private State status = State.PENDING;
-    private int partitionIndex;
-    private int partitionSize;
-
+    private int offset;
+    private int size;
 }

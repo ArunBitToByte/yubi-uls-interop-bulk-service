@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/any.proto";
 option java_multiple_files = true;
-package com.yubi.uls.interop.bulkservice.proto;
+package com.yubi.uls.bulk.proto;
 import "common.proto";
 
 message Job {

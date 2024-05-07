@@ -1,4 +1,4 @@
-package com.yubi.uls.interop.bulk.entity;
+package com.yubi.uls.bulk.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

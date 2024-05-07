@@ -16,7 +16,7 @@ public interface Job {
  void process(JobConfiguration jobConfiguration);
 
 
- void reportCompletion(JobConfiguration partition);
+ void reportCompletion(Partition partition);
 
 
  BatchProgress getProgress();
