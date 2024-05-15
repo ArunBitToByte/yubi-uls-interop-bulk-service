@@ -6,36 +6,30 @@ buildscript {
 }
 
 plugins {
-    id 'java-library'
-    id 'maven-publish'
     id 'org.springframework.boot' version '2.7.4' apply false
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+    id 'java-library'
 }
-
 
 sourceCompatibility = '17'
-
-
-// Note: for IntelliJ IDE to mark the generated files as source.
-sourceSets {
-    src {
-        main {
-            java {
-                srcDirs 'build/generated/source/proto/main/grpc'
-                srcDirs 'build/generated/source/proto/main/java'
-            }
-        }
-    }
-}
-
 
 dependencies {
     api "io.temporal:temporal-testing:1.20.1"// Java 9+ compatibility - Do NOT update to 2.0.0
     api 'org.duckdb:duckdb_jdbc:0.10.2'
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    api project(':bulk-service-repository')
+    api project(':bulk-service-rpc-proto')
+    api 'org.apache.commons:commons-lang3:3.12.0'
 
 }
 
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+    }
+}
 
 tasks.named('test') {
     useJUnitPlatform()
