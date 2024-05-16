@@ -7,6 +7,7 @@ import com.yubi.uls.bulk.core.dto.Partition;
 import com.yubi.uls.bulk.core.dto.State;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.duckdb.DuckDBConnection;
 
 import java.io.*;
@@ -30,9 +31,13 @@ public class PartitionerDuckDbImpl implements Partitioner {
 
     private String name;
     private int partitionSize;
-    int offset = 1;
+    int offset = 0;
 
     List<String> files;
+
+    private String partitionPath;
+
+    private String partitionQuery;
 
     private static final String PARTITION_QUERY =
                 """
@@ -54,8 +59,9 @@ public class PartitionerDuckDbImpl implements Partitioner {
         File sourceFile = new File(filePath);
         basePath = sourceFile.getParent();
         name = sourceFile.getName();
-        offset = 1;
-
+        offset = 0;
+        partitionPath = (String) jobConfiguration.getParameters().get(ConfigParams.PARTITION_DIR_PATH.name());
+        partitionQuery = (String) jobConfiguration.getParameters().get(ConfigParams.PARTITION_QUERY.name());
         //download file
         // partition file to db
         partitionFile();
@@ -81,20 +87,26 @@ public class PartitionerDuckDbImpl implements Partitioner {
     }
 
     private String getPartitionPath() {
-       return String.format("%s/%s_partition/", basePath, name);
+        if(!StringUtils.isEmpty(partitionPath)) {
+            return partitionPath;
+        }
+       return String.format("%s/%s_partition_test/", basePath, name);
     }
 
-    private void partitionFile() {
+    private void partitionFile(){
         try {
+            String query = buildQuery();
             Connection connection = getConnection();
-            String sql = buildQuery();
-            connection.createStatement().execute(sql);
+            connection.createStatement().execute(query);
         } catch (SQLException e) {
             e.printStackTrace();
     }
 }
 
     private String buildQuery() {
+        if(!StringUtils.isEmpty(partitionQuery)) {
+           return partitionQuery;
+        }
         String partitionDir = getPartitionPath();
        return String.format(PARTITION_QUERY, partitionSize, partitionSize, filePath, partitionDir);
     }
@@ -139,7 +151,7 @@ public class PartitionerDuckDbImpl implements Partitioner {
         if(offset >= files.size()) {
             return null;
         }
-        return getPartitionPath()+files.get(offset - 1);
+        return getPartitionPath()+files.get(offset);
     }
 
     private Connection getConnection() throws SQLException {

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ItemProcessor<T> {
     public List<T> process(ChunkConfig chunk);
+
 }

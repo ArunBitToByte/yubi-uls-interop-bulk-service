@@ -39,7 +39,7 @@ allprojects {
                 url 'https://yubi-artifact-155577958684.d.codeartifact.ap-south-1.amazonaws.com/maven/interop/'
                 credentials {
                     username "aws"
-                    password System.env.CODEARTIFACT_AUTH_TOKEN
+                    password "eyJ2ZXIiOjEsImlzdSI6MTcxNTgyNjgwNiwiZW5jIjoiQTEyOEdDTSIsInRhZyI6InpXMnlUVHV5a050b2s3ZG80aHdJN2ciLCJleHAiOjE3MTU4NzAwMDYsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiT0llMHRodnFoSTZsQ1lOQiJ9.EQtRWPaMxrK7lrGKuIBmqg.CYje4dmKlrN0Yrq3.iQXEamP7hFMX9Vy8smjk0xUa4tSuH-DWwThSrhG2kYo_RZtfKc6ulVP_5Q2zU1YHQmEIJH167ILmLfgslAISIqykal9o1QLpcEnDS-W9vtObYSzjy97UVH662DBSrTa2K1Gpm4vsPMel2omUZxT5Bgig4t9sB-qUCDNJZ6yDrO6zWq6lT5mE354mAlNhGNGW9CFQCYU9umVmJM5gGnXqJ24nYKseNaUPrrtZdfPw2abvU6FtmruVrQrLI4tdY4JG9hz5ugrhc0M0xI-62N5k7Aj-uBBW2Lh2oltg7rJtdl591h7W2SuONQs5fMGZCizbZ4NWWKTGIZV0k-Az9R9_ZpMVeCkxLfqJ6JupFw_dgw_Ki_MaS4ByNSjZw2tS2db8nLgj0zMlJouvpZWlLsPw8jRp2FoSAVNIRmdAixEGaekmbS3vF8fnxgIqA0fW_5Ic8inZQxgbrbdYDbHVqjv1W26a23mHxlrFhHhQOt-1oYaubZSzxn1wQtuqs6s-MT1T0IXVaagH2FiCSgdQ9psx6uhxrJskfuzMk87EDLyc_8NQD99hgwPLUgyDjddE2zOIverSQxgJGQYJqt0L2ZRPuCY3seN7s23lCSsz3FglXSOCnnb4ILd_WKhqlAng5wlwU_Fl9gUokAbZw5J7BR11ILPcAUKvecgmMppGeTy-VgIh9JD0-YyXyJ0m7iZefImbdJVfxaqbbjefgVPLmp2QZ5KXgeP8PZ9B82K0QhxzMBa2Vo18-Gcl3mo7shPd_w4xxyZBWgIV9dmiu6G1yutnbtbypqewN2-CbLAQE7eLPaWfXqB5ZG4psCVGF99CMaDaclDsLwRrEaDSnVgQ156_hq2GyseBBBCHh0Wc0EPDscXBGduk_gutTyk2L2tEIJirQzsedb8YWDgVmzUHw55reUDopIIzRjxwaTIPbM9YmwVlDjIm0AH5-uaA7BEQzNRxTTz6VETRI40_PXsxYHYC_L8hU2tM12qSXkkweRc6UL4jTgW3bGHPH9n9ILfz27LQqyWL4kqvjAcEGashiw6HVuXPhj0-4sb7o9E6GWQMKIvYyOd1Alk4C-rKRdmiSW0tnr7X8OSFyK5Qvc4NrGisP9l2e4-3ImWgcc9LE2vKLtWfgDB9EiYlU54WKuLWwYElqdiug7WsCQBI96ANntG0JKTJbizTYOMEEEgtIQ.ASM2383EzhU5Y3V9i3dLRQ"
                 }
             }
         }

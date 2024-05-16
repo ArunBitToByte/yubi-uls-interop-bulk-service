@@ -63,7 +63,6 @@ public class DefaultJobImpl implements JobWorkflow {
         int partitionIndex = 0;
 
         for (Partition partition : partitions) {
-            // Uses human friendly child id.
             partitionIndex = processPartition(jobConfiguration, partitionIndex, partition);
         }
         Workflow.await(runningWorkflows::isEmpty);

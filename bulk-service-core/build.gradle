@@ -19,9 +19,10 @@ dependencies {
     api 'org.duckdb:duckdb_jdbc:0.10.2'
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
-    api project(':bulk-service-repository')
-    api project(':bulk-service-rpc-proto')
     api 'org.apache.commons:commons-lang3:3.12.0'
+    compileOnly 'jakarta.annotation:jakarta.annotation-api:1.3.5'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
 
